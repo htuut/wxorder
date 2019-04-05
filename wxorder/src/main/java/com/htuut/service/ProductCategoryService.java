@@ -1,6 +1,6 @@
 package com.htuut.service;
 
-import com.htuut.entiry.ProductCategory;
+import com.htuut.entity.ProductCategory;
 
 import java.util.List;
 

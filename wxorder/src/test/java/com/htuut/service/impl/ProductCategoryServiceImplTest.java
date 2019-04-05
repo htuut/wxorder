@@ -1,6 +1,6 @@
 package com.htuut.service.impl;
 
-import com.htuut.entiry.ProductCategory;
+import com.htuut.entity.ProductCategory;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

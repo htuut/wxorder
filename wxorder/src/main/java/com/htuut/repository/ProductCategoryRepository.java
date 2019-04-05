@@ -1,6 +1,6 @@
 package com.htuut.repository;
 
-import com.htuut.entiry.ProductCategory;
+import com.htuut.entity.ProductCategory;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

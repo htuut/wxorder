@@ -1,6 +1,6 @@
 package com.htuut.service.impl;
 
-import com.htuut.entiry.ProductCategory;
+import com.htuut.entity.ProductCategory;
 import com.htuut.repository.ProductCategoryRepository;
 import com.htuut.service.ProductCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.htuut.entiry;
+package com.htuut.entity;
 
 import lombok.Data;
 

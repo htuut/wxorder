@@ -1,6 +1,6 @@
 package com.htuut.controller;
 
-import com.htuut.entiry.ProductCategory;
+import com.htuut.entity.ProductCategory;
 import com.htuut.repository.ProductCategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

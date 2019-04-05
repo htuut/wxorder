@@ -26,3 +26,5 @@ spring:
   #      - classpath:department.sql
 
 
+server:
+  context-path: /htuut
