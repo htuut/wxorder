@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Data
-public class OrderDetatils {
+public class OrderDetail {
 
     @Id
     private String detailId;
