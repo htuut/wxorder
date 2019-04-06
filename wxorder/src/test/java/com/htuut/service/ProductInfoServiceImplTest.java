@@ -49,7 +49,7 @@ public class ProductInfoServiceImplTest {
         info.setProductId("1234567");
         info.setProductName("榴莲披萨");
         info.setProductPrice(new BigDecimal(10));
-        info.setProductStock("100");
+        info.setProductStock(100);
         info.setProductDescription("这是商品描述");
         info.setProductIcon("https://xxxxx.png");
         info.setProductStatus(1);
