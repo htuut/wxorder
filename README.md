@@ -27,8 +27,8 @@ size
             "orderAmount": 20,
             "orderStatus": 0,
             "payStatus": 0,
-            "createTime": 1554602522000,
-            "updateTime": 1554602522000,
+            "createTime": 1554602522,
+            "updateTime": 1554602522,
             "detailList": null
         },
         {
@@ -40,8 +40,8 @@ size
             "orderAmount": 20,
             "orderStatus": 0,
             "payStatus": 0,
-            "createTime": 1554602531000,
-            "updateTime": 1554602531000,
+            "createTime": 1554602531,
+            "updateTime": 1554602531,
             "detailList": null
         }
     ]

@@ -1,6 +1,8 @@
 package com.htuut.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.htuut.entity.OrderDetail;
+import com.htuut.utils.serializer.Date2LongSerializer;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -32,8 +34,10 @@ public class OrderDTO {
      */
     private Integer payStatus;
 
+    @JsonSerialize(using = Date2LongSerializer.class)
     private Date createTime;
 
+    @JsonSerialize(using = Date2LongSerializer.class)
     private Date updateTime;
 
     private List<OrderDetail> detailList;
