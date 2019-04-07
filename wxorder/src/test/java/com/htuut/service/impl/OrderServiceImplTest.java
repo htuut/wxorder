@@ -2,12 +2,16 @@ package com.htuut.service.impl;
 
 import com.htuut.dto.OrderDTO;
 import com.htuut.entity.OrderDetail;
+import com.htuut.enums.OrderStatusEnum;
+import com.htuut.enums.PayStatusEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
@@ -60,17 +64,35 @@ public class OrderServiceImplTest {
 
     @Test
     public void findList() {
+
+        PageRequest pageRequest = new PageRequest(0, 2);
+        Page<OrderDTO> orderDTOPage = orderService.findList(BUYER_OPENID, pageRequest);
+        Assert.assertNotEquals(0, orderDTOPage.getTotalElements());
+
+
     }
 
     @Test
     public void cancel() {
+        OrderDTO orderDTO = orderService.findOne(ORDER_ID);
+        OrderDTO cancelResult = orderService.cancel(orderDTO);
+
+        Assert.assertEquals(OrderStatusEnum.CANCEL.getCode(), cancelResult.getOrderStatus());
+
     }
 
     @Test
     public void finish() {
+        OrderDTO orderDTO = orderService.findOne(ORDER_ID);
+        OrderDTO finishResult = orderService.finish(orderDTO);
+        Assert.assertEquals(OrderStatusEnum.FINISH.getCode(), finishResult.getOrderStatus());
     }
 
     @Test
     public void paid() {
+        OrderDTO orderDTO = orderService.findOne(ORDER_ID);
+        OrderDTO finishResult = orderService.paid(orderDTO);
+        Assert.assertEquals(PayStatusEnum.FINISH.getCode(), finishResult.getPayStatus());
+
     }
 }
