@@ -75,8 +75,33 @@ public class BuyerOrderController {
 
 
     //订单详情
+    @GetMapping("/detail")
+    public ResultVO<OrderDTO> detail(@RequestParam("openid") String openid,
+                                     @RequestParam("orderId") String orderId) {
+
+        //TODO
+
+        OrderDTO orderDTO = orderService.findOne(orderId);
+
+        return ResultVOUtil.success(orderDTO);
+
+    }
+
 
     //查询订单
+    @GetMapping("/cancel")
+    public ResultVO cancel(@RequestParam("openid") String openid,
+                           @RequestParam("orderId") String orderId){
+
+        //TODO
+
+        OrderDTO orderDTO = orderService.findOne(orderId);
+
+        orderService.cancel(orderDTO);
+
+        return ResultVOUtil.success();
+
+    }
 
 
 }

@@ -1,5 +1,6 @@
 package com.htuut.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.htuut.entity.OrderDetail;
 import com.htuut.utils.serializer.Date2LongSerializer;
@@ -10,6 +11,8 @@ import java.util.Date;
 import java.util.List;
 
 @Data
+//@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
+//@JsonInclude(JsonInclude.Include.NON_NULL)//为 null 的值不返回给前端
 public class OrderDTO {
 
     private String orderId;
@@ -34,10 +37,10 @@ public class OrderDTO {
      */
     private Integer payStatus;
 
-    @JsonSerialize(using = Date2LongSerializer.class)
+    @JsonSerialize(using = Date2LongSerializer.class)//设置返回给前端日期的格式
     private Date createTime;
 
-    @JsonSerialize(using = Date2LongSerializer.class)
+    @JsonSerialize(using = Date2LongSerializer.class)//设置返回给前端日期的格式
     private Date updateTime;
 
     private List<OrderDetail> detailList;
