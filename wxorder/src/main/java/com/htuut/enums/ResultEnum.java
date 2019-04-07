@@ -25,6 +25,8 @@ public enum ResultEnum {
 
     CART_EMPTY(19,"购物车不能为空"),
 
+    ORDER_OWNER_ORDER(20,"该订单不属于当前用户"),
+
     ;
 
 

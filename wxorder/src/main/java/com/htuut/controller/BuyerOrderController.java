@@ -5,6 +5,7 @@ import com.htuut.dto.OrderDTO;
 import com.htuut.enums.ResultEnum;
 import com.htuut.exception.SellException;
 import com.htuut.form.OrderForm;
+import com.htuut.service.BuyerService;
 import com.htuut.service.OrderService;
 import com.htuut.utils.ResultVOUtil;
 import com.htuut.vo.ResultVO;
@@ -29,6 +30,9 @@ public class BuyerOrderController {
 
     @Autowired
     private OrderService orderService;
+
+    @Autowired
+    private BuyerService buyerService;
 
     //创建订单
     @RequestMapping("/create")
@@ -79,10 +83,7 @@ public class BuyerOrderController {
     public ResultVO<OrderDTO> detail(@RequestParam("openid") String openid,
                                      @RequestParam("orderId") String orderId) {
 
-        //TODO
-
-        OrderDTO orderDTO = orderService.findOne(orderId);
-
+        OrderDTO orderDTO = buyerService.findOrderOne(openid, orderId);
         return ResultVOUtil.success(orderDTO);
 
     }
@@ -91,14 +92,9 @@ public class BuyerOrderController {
     //查询订单
     @GetMapping("/cancel")
     public ResultVO cancel(@RequestParam("openid") String openid,
-                           @RequestParam("orderId") String orderId){
+                           @RequestParam("orderId") String orderId) {
 
-        //TODO
-
-        OrderDTO orderDTO = orderService.findOne(orderId);
-
-        orderService.cancel(orderDTO);
-
+        buyerService.cancelOrder(openid, orderId);
         return ResultVOUtil.success();
 
     }
